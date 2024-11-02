@@ -8,11 +8,9 @@ CITY_DATA = { 'chicago': 'chicago.csv',
 cities = ['chicago', 'new york city', 'washington']
 months = ['january', 'february', 'march', 'april', 'may', 'june', 'all']
 days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'all']
-def get_filters():
-    
+def get_filters():    
     print('Hello! Let\'s explore some US bikeshare data!')
-    # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
-    # adding to documentation branch
+    # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs    
     while True:
         city =input('ENTER THE CITY(Chicago, New York City,or Washington): ').lower()
         if city in cities:
@@ -33,9 +31,7 @@ def get_filters():
         if day in days:
             break
         else:
-          print('Please enter valid day.')  
-    
-      
+          print('Please enter valid day.') 
 
     print('-'*40)
     return city, month, day
@@ -129,8 +125,7 @@ def user_stats(df,city):
     try:        
         print("Gender count: ",df['Gender'].value_counts())
     except:
-        print('Counts of Each User Gender:\nSorry, no gender data available for {}'.format(city.title()))
-        
+        print('Counts of Each User Gender:\nSorry, no gender data available for {}'.format(city.title()))       
     
 
     # Display earliest, most recent, and most common year of birth
@@ -156,8 +151,7 @@ def raw_data (df):
 def main():
     while True:
         city, month, day = get_filters()
-        df = load_data(city, month, day)
-        #print(df)
+        df = load_data(city, month, day)        
         time_stats(df)
         station_stats(df)
         trip_duration_stats(df)
