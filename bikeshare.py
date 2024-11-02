@@ -67,7 +67,7 @@ def time_stats(df):
 
     # display the most common start hour
     print("The most common hour is: ", df['Start Time'].dt.hour.value_counts().idxmax())
-
+    # display the most common seconds
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
